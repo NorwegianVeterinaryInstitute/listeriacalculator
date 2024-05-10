@@ -13,7 +13,8 @@ Imports:
     golem (>= 0.4.1),
     pkgload,
     shiny (>= 1.8.1.1),
-    markdown
+    markdown,
+    echarts4r
 Suggests: 
     spelling,
     testthat (>= 3.0.0)

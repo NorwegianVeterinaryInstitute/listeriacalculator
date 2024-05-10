@@ -6,7 +6,7 @@
 }
 .header-left {
     max-height: 50px;
-    max-width: 280px; 
+    max-width: 280px;
     color: white;
 }
 .header-right {
@@ -15,4 +15,7 @@
 .header-middle {
     font-size: xx-large;
     color: white;
+}
+.radio-inline {
+    margin-right: 4em;
 }

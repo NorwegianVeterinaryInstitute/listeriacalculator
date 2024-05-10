@@ -22,7 +22,7 @@ mod_listeria_calculator_ui <- function(id){
   div(
     class = "col-9 border rounded shadow-sm p-2",
     h5(shiny::uiOutput(ns("card_title_plot"))),
-    shiny::plotOutput(ns("listeria_plot")))
+    echarts4r::echarts4rOutput(ns("listeria_plot")))
   ))
 }
 
@@ -169,17 +169,20 @@ mod_listeria_calculator_server <- function(id, selected_language){
                    value = 3
                  ))
         ),
+        shiny::div(class="text-center",
         shiny::radioButtons(
-          "initial_conc",
+          ns("initial_conc"),
           label = "Initial concentration",
           choices = c(0.04, 1, 10),
-          inline = TRUE
-        )
-        
-        
-        
+          selected = 1,
+          inline = TRUE,
+          width = "100%"
+        ))
+
+
+
       )
-      
+
     })
 
     card_title_ui <- reactive({
@@ -202,7 +205,7 @@ mod_listeria_calculator_server <- function(id, selected_language){
       }
     )
 
-    output$listeria_plot <- shiny::renderPlot({
+    output$listeria_plot <- echarts4r::renderEcharts4r({
       make_plot(
         prod_temp = input$prod_temp,
         prod_days = input$prod_days,
