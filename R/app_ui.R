@@ -40,11 +40,12 @@ app_ui <- function(request) {
       bslib::nav_item(shiny::uiOutput("app_title")),
 
       bslib::nav_spacer(),
-      bslib::nav_panel(title = shiny::uiOutput("home_tab"), mod_home_ui("home_1"))#,
+      bslib::nav_panel(title = shiny::uiOutput("home_tab"), mod_home_ui("home_1")),
       #bslib::nav_panel(
         #title = shiny::uiOutput("farm_tab"),
         #mod_calculate_farm_level_prediction_ui("calculate_farm_level_prediction_1")
-      #)
+      #),
+      bslib::nav_panel(title = shiny::uiOutput("about_tab"), mod_about_ui("about_1"))
     )
   )
 }

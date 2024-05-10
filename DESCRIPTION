@@ -3,7 +3,7 @@ Title: Listeria Calculator
 Version: 0.0.0.9000
 Authors@R: 
     person("Novica", "Nakov", , "nona@vetinst.no", role = c("cre", "aut"))
-Description: An app to calculate listeria growth.
+Description: An app to calculate listeria growth in raw fish.
 License: Apache License (>= 2)
 URL: https://github.com/norwegianVeterinaryInstitute/listeriacalculator
 BugReports: 
@@ -12,7 +12,8 @@ Imports:
     config (>= 0.3.2),
     golem (>= 0.4.1),
     pkgload,
-    shiny (>= 1.8.1.1)
+    shiny (>= 1.8.1.1),
+    markdown
 Suggests: 
     spelling,
     testthat (>= 3.0.0)

@@ -23,4 +23,11 @@ app_server <- function(input, output, session) {
     input$selected_language
   }))
 
+  output$about_tab <- renderUI({
+    shiny::h6(i18n()$t("About"))
+  })
+
+  mod_about_server("about_1", reactive({
+    input$selected_language
+  }))
 }
