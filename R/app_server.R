@@ -23,6 +23,15 @@ app_server <- function(input, output, session) {
     input$selected_language
   }))
 
+  output$calc_tab <- renderUI({
+    shiny::h6(i18n()$t("Calculator"))
+  })
+
+  mod_listeria_calculator_server("listeria_calculator_1", reactive({
+    input$selected_language
+  }))
+
+
   output$about_tab <- renderUI({
     shiny::h6(i18n()$t("About"))
   })

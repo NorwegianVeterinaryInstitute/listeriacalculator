@@ -41,11 +41,19 @@ app_ui <- function(request) {
 
       bslib::nav_spacer(),
       bslib::nav_panel(title = shiny::uiOutput("home_tab"), mod_home_ui("home_1")),
-      #bslib::nav_panel(
-        #title = shiny::uiOutput("farm_tab"),
-        #mod_calculate_farm_level_prediction_ui("calculate_farm_level_prediction_1")
-      #),
-      bslib::nav_panel(title = shiny::uiOutput("about_tab"), mod_about_ui("about_1"))
+      bslib::nav_panel(
+        title = shiny::uiOutput("calc_tab"),
+        mod_listeria_calculator_ui("listeria_calculator_1")
+      ),
+      bslib::nav_panel(title = shiny::uiOutput("about_tab"), mod_about_ui("about_1")),
+      bslib::nav_item(
+        shiny::selectInput(
+          inputId = "selected_language",
+          label = NULL,
+          choices = c("en", "nb"),
+          width = '75px'
+        )
+      ),
     )
   )
 }

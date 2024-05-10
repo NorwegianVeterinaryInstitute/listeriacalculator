@@ -7,7 +7,26 @@
       "nb": "Listeria-kalkulator for rå fisk"},
     {
       "en": "Home",
-      "nb": "Hjem"}
+      "nb": "Hjem"},
+    {
+      "en": "About",
+      "nb": "Om"},
+    {
+      "en": "Calculator",
+      "nb": "Kalkulator"},
+    {
+      "en": "My Numbers",
+      "nb": "Mine tall"},
+    {
+      "en": "Storage in a salmon production company",
+      "nb": "Lagring i produksjonbedrift av laks"},
+    {
+      "en": "Temperature (0 - 10°C)",
+      "nb": "Temperatur (0 - 10°C)"},
+    {
+      "en": "Days",
+      "nb": "Dager"}
+
   ]
 }
 
