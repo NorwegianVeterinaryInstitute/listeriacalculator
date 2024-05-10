@@ -1,0 +1,13 @@
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": ["en", "nb"],
+  "translation": [
+    {
+      "en": "Listeria Calculator for raw fish",
+      "nb": "Listeria-kalkulator for rå fisk"},
+    {
+      "en": "Home",
+      "nb": "Hjem"}
+  ]
+}
+
