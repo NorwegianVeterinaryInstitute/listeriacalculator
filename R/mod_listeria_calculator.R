@@ -22,7 +22,7 @@ mod_listeria_calculator_ui <- function(id){
   div(
     class = "col-9 border rounded shadow-sm p-2",
     h5(shiny::uiOutput(ns("card_title_plot"))),
-    shiny::plotOutput(ns("plot_farm")))
+    shiny::plotOutput(ns("listeria_plot")))
   ))
 }
 
@@ -38,46 +38,160 @@ mod_listeria_calculator_server <- function(id, selected_language){
 
 
     output$sidebar_calc <- shiny::renderUI({
-
       shiny::tagList(
-      fluidRow(
-          column(12, align="center",
-          shiny::h3("My Numbers")
-          )),
-      fluidRow(
-          column(12, align="center",
-           shiny::h6("Storage in a salmon production company")
-          )),
-      fluidRow(
+        fluidRow(column(12, align = "center",
+                        shiny::h3("My Numbers"))),
+        fluidRow(column(
+          12, align = "center",
+          shiny::h6("Storage in a salmon production company")
+        )),
+        fluidRow(
+          column(
+            6,
+            shiny::numericInput(
+              ns("prod_temp"),
+              label = i18n()$t("Temperature (0 - 10°C)"),
+              value = 4,
+              min = 0,
+              max = 10
+            )
+          ),
           column(6,
-      shiny::numericInput(
-        ns("prod_temp"),
-        label = i18n()$t("Temperature (0 - 10°C)"),
-        value = 4,
-        min = 0,
-        max = 10
-      )),
-      column(6,
-      shiny::numericInput(
-        ns("prod_days"),
-        label = i18n()$t("Days"),
-        value = 3
-      ))),
-
-     )
-
+                 shiny::numericInput(
+                   ns("prod_days"),
+                   label = i18n()$t("Days"),
+                   value = 3
+                 ))
+        ),
+        fluidRow(column(12, align = "center",
+                        shiny::h6("Time in store"))),
+        fluidRow(
+          column(
+            6,
+            shiny::numericInput(
+              ns("store_temp"),
+              label = i18n()$t("Temperature (0 - 10°C)"),
+              value = 4,
+              min = 0,
+              max = 10
+            )
+          ),
+          column(6,
+                 shiny::numericInput(
+                   ns("store_days"),
+                   label = i18n()$t("Days"),
+                   value = 3
+                 ))
+        ),
+        fluidRow(column(12, align = "center",
+                        shiny::h6("Transport home"))),
+        fluidRow(
+          column(
+            6,
+            shiny::numericInput(
+              ns("home_temp"),
+              label = i18n()$t("Temperature (0 - 10°C)"),
+              value = 4,
+              min = 0,
+              max = 10
+            )
+          ),
+          column(6,
+                 shiny::numericInput(
+                   ns("home_hours"),
+                   label = i18n()$t("Hours"),
+                   value = 3
+                 ))
+        ),
+        fluidRow(column(
+          12, align = "center",
+          shiny::h6("Storing salmon in a refrigerator")
+        )),
+        fluidRow(
+          column(
+            6,
+            shiny::numericInput(
+              ns("salmon_temp"),
+              label = i18n()$t("Temperature (0 - 10°C)"),
+              value = 4,
+              min = 0,
+              max = 10
+            )
+          ),
+          column(6,
+                 shiny::numericInput(
+                   ns("salmon_hours"),
+                   label = i18n()$t("Hours"),
+                   value = 3
+                 ))
+        ),
+        fluidRow(column(
+          12, align = "center",
+          shiny::h6("Storing sushi in a refrigerator")
+        )),
+        fluidRow(
+          column(
+            6,
+            shiny::numericInput(
+              ns("sushi_temp"),
+              label = i18n()$t("Temperature (0 - 10°C)"),
+              value = 4,
+              min = 0,
+              max = 10
+            )
+          ),
+          column(6,
+                 shiny::numericInput(
+                   ns("sushi_hours"),
+                   label = i18n()$t("Hours"),
+                   value = 3
+                 ))
+        ),
+        fluidRow(column(
+          12, align = "center",
+          shiny::h6("Tempering period")
+        )),
+        fluidRow(
+          column(
+            6,
+            shiny::numericInput(
+              ns("period_temp"),
+              label = i18n()$t("Temperature (0 - 10°C)"),
+              value = 4,
+              min = 0,
+              max = 10
+            )
+          ),
+          column(6,
+                 shiny::numericInput(
+                   ns("period_hours"),
+                   label = i18n()$t("Hours"),
+                   value = 3
+                 ))
+        ),
+        shiny::radioButtons(
+          "initial_conc",
+          label = "Initial concentration",
+          choices = c(0.04, 1, 10),
+          inline = TRUE
+        )
+        
+        
+        
+      )
+      
     })
 
     card_title_ui <- reactive({
       if (i18n()$get_translation_language() == 'en') {
         ui <-
           shiny::renderText(
-            "Prediction per farm"
+            "Listeria growth prediction"
           )
       } else {
         ui <-
           shiny::renderText(
-            "Prediksjon per gård"
+            "Listeria vekst prediksjon"
           )
       }})
 
@@ -88,35 +202,26 @@ mod_listeria_calculator_server <- function(id, selected_language){
       }
     )
 
-    output$plot_farm <- shiny::renderPlot(
-      {
-        tryCatch(
-          expr = {
-        make_plot_from_location(location = input$locality_number,
-                                weight = input$fish_weight_farm,
-                                abundance = input$fish_abundance_farm,
-                                cleaner = input$cleaner_fish_farm,
-                                lang = i18n()$get_translation_language())
-          },
-        error = function(e) {
-          showModal(
+    output$listeria_plot <- shiny::renderPlot({
+      make_plot(
+        prod_temp = input$prod_temp,
+        prod_days = input$prod_days,
+        store_temp = input$store_temp,
+        store_days = input$store_days,
+        home_temp = input$home_temp,
+        home_hours = input$home_hours,
+        salmon_temp = input$salmon_temp,
+        salmon_hours = input$salmon_hours,
+        sushi_temp = input$sushi_temp,
+        sushi_hours = input$sushi_hours,
+        period_temp = input$period_temp,
+        period_hours = input$period_hours,
+        initial_conc = input$initial_conc,
+        lang = i18n()$get_translation_language()
+      )
+    }
 
-            if (i18n()$get_translation_language() == 'en') {
-              modalDialog(title = "Error",
-                          "The locality was found, but we could not generate predictions.",
-                          footer = modalButton("Dismiss"))
-            }  else {
-              modalDialog(title = "Feil",
-                          "Lokaliteten ble funnet, men vi kunne ikke generere spådommer.",
-                          footer = modalButton("Avskjedige"))
-
-            }
-
-          )
-        }
-        )
-      }
-    ) |> shiny::bindEvent(input$predict)
+    ) #|> shiny::bindEvent(input$predict)
 
   })
 }

@@ -25,7 +25,28 @@
       "nb": "Temperatur (0 - 10°C)"},
     {
       "en": "Days",
-      "nb": "Dager"}
+      "nb": "Dager"},
+    {
+      "en": "Hours",
+      "nb": "Timer"},
+    {
+      "en": "Time in store",
+      "nb": "Tid i butikk"},
+    {
+      "en": "Transport home",
+      "nb": "Transport heim"},
+    {
+      "en": "Storing salmon in a refrigerator",
+      "nb": "Lagring av laks i kjøleskåp"},
+    {
+      "en": "Storing sushi in a refrigerator",
+      "nb": "Lagring sushi laks i kjøleskåp"},
+    {
+      "en": "Tempering period",
+      "nb": "Tempereringsperiode"},
+    {
+      "en": "Initial concetration",
+      "nb": "Startkonsentrasjon"}
 
   ]
 }
