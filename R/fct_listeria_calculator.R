@@ -6,20 +6,20 @@
 #'
 #' @noRd
 
-make_plot <- function(prod_temp = NULL,
-                      prod_days = NULL,
-                      store_temp = NULL,
-                      store_days = NULL,
-                      home_temp = NULL,
-                      home_hours = NULL,
-                      salmon_temp = NULL,
-                      salmon_hours = NULL,
-                      sushi_temp = NULL,
-                      sushi_hours = NULL,
-                      period_temp = NULL,
-                      period_hours = NULL,
-                      initial_conc = NULL,
-                      lang = NULL) {
+make_plot <- function(prod_temp,
+                      prod_days,
+                      store_temp,
+                      store_days,
+                      home_temp,
+                      home_hours,
+                      salmon_temp,
+                      salmon_hours,
+                      sushi_temp,
+                      sushi_hours,
+                      period_temp,
+                      period_hours,
+                      initial_conc,
+                      lang) {
  
   p <- plot(1:10, 1:10)
   
