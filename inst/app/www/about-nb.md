@@ -1,4 +1,4 @@
-###Bakgrunnsinformasjon
+## Bakgrunnsinformasjon
 Listeria monocytogenes er ei farleg bakterie som finnst i mat frå tid til annan. Normalt friske folk tåler nokså høge konsentrasjonar av den utan å få alvorleg sjukdom, men gravide, eldre, små barn og folk med nedsett immunforsvar tåler mindre. Les meir om Listeria monocytogenes.
 
 Regelverket og Listeria monocytogenes i mat
@@ -8,7 +8,7 @@ Utfordringa med Listeria er at den kan vekse i mange typer mat, sjølv ved kjøl
 
 Listeria finnst relativt oftare i fisk og sjømat enn i andre matvarer. Dette gjer at nokon land rår gravide frå å eta sushi. Andre land har ikkje kategoriske råd.
 
-###Slik skjer berekninga
+### Slik skjer berekninga
 Vi har målt kor raskt Listeria veks i laks og sushi på ulike temperaturar, td 4, 10 og 22 grader. Desse er brukt som referanseverdiar i kalkulatoren. For andre temperaturar, er det brukt ein omrekningsmodell for å finne vekstfarten. Denne modellen er beskreven i retningslinjene for lagringsstudier for risikovirdering av Listeria i mat.
 
 Vi har sjekka at modellen er gyldig for Listeria monocytogenes i laks og sushi av laks for desse temperaturområde:
@@ -25,7 +25,7 @@ Grunnen til denne variasjonen er dels at Listeria verkeleg er ujamt fordelt, og 
 
 Set derfor inn derfor fleire startkonsentrasjonar og vurder etter verste sannsynlege scenarie
 
-###Kva er sluttkonsentrasjonen av Listeria i fisk?
+### Kva er sluttkonsentrasjonen av Listeria i fisk?
 Listeria formeirar seg ved dobling. Det betyr at konsentrasjonen aukar slik: 1-2-4-8-16-32-64-128-254-1008-2016-4032-8064-osv. Når veksten kjem i gang, tek det like lang tid mellom kvar dobling, inntil det blir slutt på næring eller andre forhold bremsar veksten. Tida mellom kvar dobling avhenger av temperatur og vekstforholda i maten.
 
 Vekstkurva for kvart ledd i kjeda er gjeve som linjer i figuren, i logaritmisk skala. Om ein vil rekne om i absolutte tal, kan det gjerast med å ta eksponenten til logaritmen, slik:
@@ -48,7 +48,7 @@ Sjølv om modellen og kalkulatoren er velprøvd og testa, blir ein modell aldri 
 
 I tillegg: om det er målt temperaturavvik på kjølerommet, er det sannsynleg at nokon deler av rommet, til dømes nær varmepunkt, har høgare temperatur enn resten. I så fall vil veksten vera raskast i dei varmaste delene av partiet. Temperaturen i ulike deler av kjøleskåpet kan også variere. Bruk derfor kalkulatoren ut frå eit verst tenkjeleg scenarie.
 
-###Juridisk
+### Juridisk
 Veterinærinsttutter er ikkje juridisk ansvarleg for feil bruk av kalkulatoren. Kalkulatoren skal berre brukast som supplement til andre krav i regelverket, ikkje som erstatning.
 
 ###Kontakt oss
@@ -56,7 +56,7 @@ For spørsmål, kontakt Taran Skjerdal.
 
 E-post: taran.skjerdal@vetinst.no
 
-###Litteraturliste
+### Litteraturliste
 1. Beaufort A, Bergis H, Lardeux AL, in collaboration with Betts G, Polet M, Botteldoorn N, Papageorgiou G, Andersen JK, Boel J, Hickey B, Jacolbs_Reitsma W, Fitz-James I, Gomes CMP, Cabanova L, Sarabia CA, Skjerdal, T 2014. EURL Lm technical guidance document for conducting shelf-life studies on Listeria monocytogenes in ready-to-eat foods, version 3 – 6 June 2014 ANSES, Maisons-Alfort, France, pp.46. Implemented in EU food legislation. https://ec.europa.eu/food/sites/food/files/safety/docs/biosafety_fh_mc_technical_guidance_document_listeria_in_rte_foods.pdf .
 2. Buchanan, R. L., Gorris, L. G. M., Hayman, M. M., Jackson, T. C., & Whiting, R. C. (2017). A review of Listeria monocytogenes: An update on outbreaks, virulence, dose-response, ecology, and risk assessments. Food Control, 75, 1-13. doi:10.1016/j.foodcont.2016.12.016
 3. Matportalen, Kostholdsråd for gravide http://www.matportalen.no/rad_til_spesielle_grupper/tema/gravide/
