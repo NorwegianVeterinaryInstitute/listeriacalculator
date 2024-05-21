@@ -109,8 +109,7 @@ make_plot <- function(prod_temp = 4,
     dplyr::group_by(category) |> 
     echarts4r::e_charts(name) |>
     echarts4r::e_line(value) |> 
-    echarts4r::e_x_axis(axisLabel = list(rotate = 45)) |> 
-    echarts4r::e_grid(bottom = "60%")
+    echarts4r::e_x_axis(axisLabel = list(rotate = 45)) 
 
   return(p)
 
