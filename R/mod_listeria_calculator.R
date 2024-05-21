@@ -90,7 +90,7 @@ mod_listeria_calculator_server <- function(id, selected_language){
             6,
             shiny::numericInput(
               ns("home_temp"),
-              label = i18n()$t("Temperature (0 - 10°C)"),
+              label = i18n()$t("Temperature (0 - 25°C)"),
               value = 10,
               min = 0,
               max = 25
@@ -156,10 +156,10 @@ mod_listeria_calculator_server <- function(id, selected_language){
             6,
             shiny::numericInput(
               ns("period_temp"),
-              label = i18n()$t("Temperature (0 - 10°C)"),
+              label = i18n()$t("Temperature (15 - 25°C)"),
               value = 22,
               min = 15,
-              max = 26
+              max = 25
             )
           ),
           column(6,
