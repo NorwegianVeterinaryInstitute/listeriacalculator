@@ -91,9 +91,9 @@ mod_listeria_calculator_server <- function(id, selected_language){
             shiny::numericInput(
               ns("home_temp"),
               label = i18n()$t("Temperature (0 - 10°C)"),
-              value = 4,
+              value = 10,
               min = 0,
-              max = 10
+              max = 25
             )
           ),
           column(6,
@@ -113,7 +113,7 @@ mod_listeria_calculator_server <- function(id, selected_language){
             shiny::numericInput(
               ns("salmon_temp"),
               label = i18n()$t("Temperature (0 - 10°C)"),
-              value = 4,
+              value = 10,
               min = 0,
               max = 10
             )
@@ -144,7 +144,7 @@ mod_listeria_calculator_server <- function(id, selected_language){
                  shiny::numericInput(
                    ns("sushi_hours"),
                    label = i18n()$t("Hours"),
-                   value = 3
+                   value = 12
                  ))
         ),
         fluidRow(column(
@@ -157,16 +157,16 @@ mod_listeria_calculator_server <- function(id, selected_language){
             shiny::numericInput(
               ns("period_temp"),
               label = i18n()$t("Temperature (0 - 10°C)"),
-              value = 4,
-              min = 0,
-              max = 10
+              value = 22,
+              min = 15,
+              max = 26
             )
           ),
           column(6,
                  shiny::numericInput(
                    ns("period_hours"),
                    label = i18n()$t("Hours"),
-                   value = 3
+                   value = 6
                  ))
         ),
         shiny::div(class="text-center",
