@@ -1715,7 +1715,7 @@
     },
     "listeriacalculator": {
       "Source": "github",
-      "Repository": "https://github.com/norwegianVeterinaryInstitute/listeriacalculator",
+      "Repository": null,
       "description": {
         "Package": "listeriacalculator",
         "Title": "Listeria Calculator",
