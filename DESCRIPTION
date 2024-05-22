@@ -18,7 +18,8 @@ Imports:
     golem (>= 0.4.1),
     shiny (>= 1.8.1.1),
     shiny.i18n,
-    stringr
+    stringr, 
+    markdown
 Suggests: 
     knitr,
     rmarkdown,
