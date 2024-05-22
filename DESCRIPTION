@@ -8,14 +8,19 @@ License: Apache License (>= 2)
 URL: https://github.com/norwegianVeterinaryInstitute/listeriacalculator
 BugReports: 
     https://github.com/norwegianVeterinaryInstitute/listeriacalculator/issues
+Depends: 
+    R (>= 2.10)
 Imports: 
+    bslib,
     config (>= 0.3.2),
+    dplyr,
+    echarts4r,
     golem (>= 0.4.1),
-    pkgload,
     shiny (>= 1.8.1.1),
-    markdown,
-    echarts4r
+    shiny.i18n
 Suggests: 
+    knitr,
+    rmarkdown,
     spelling,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
@@ -23,3 +28,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 RoxygenNote: 7.3.1
+VignetteBuilder: knitr
