@@ -15,7 +15,7 @@ mod_about_ui <- function(id){
 }
 
 #' about Server Functions
-#'
+#' @importFrom shiny includeMarkdown
 #' @noRd
 mod_about_server <- function(id, selected_language){
   moduleServer( id, function(input, output, session){

@@ -1,11 +1,19 @@
 #' calc_mini_table_1
+#' @param prod_temp temperature in Celsius
+#' @param prod_days period in days
+#' @param initial_conc initial concentration of bacteria
 #'
-#' This function calculates the values that are seen in the
+#' @details
+#' #' This function calculates the values that are seen in the
 #' Lagring i produksjonsbedrift av laks (H14) mini table in the
 #' Excel sheet.
 #'
 #' It returns values that are equivalent to row 1 and row 2 of
 #' the results table (A54) BUT without the cumulative sum.
+#'
+#' @return a list of calculated data
+#'
+#' @noRd
 calc_mini_table_1 <- function(prod_temp = 4,
                               prod_days = 3,
                               initial_conc = 0.2) {
@@ -33,11 +41,20 @@ calc_mini_table_1 <- function(prod_temp = 4,
 
 #' calc_mini_table_2
 #'
+#' @param store_temp temperature in Celsius
+#' @param store_days period in days
+#' @param initial_conc initial concentration of bacteria
+#'
+#' @details
 #' This function calculates the values that are seen in the
 #' Innkjøp i butikk (H21) mini table in the  Excel sheet.
 #'
 #' It returns values that are equivalent to row 3 of
 #' the results table (A54) BUT without the cumulative sum.
+#'
+#' @return a list of calculated data
+#'
+#' @noRd
 calc_mini_table_2 <- function(store_temp = 4,
                               store_days = 3,
                               initial_conc = 0.2) {
@@ -59,6 +76,14 @@ calc_mini_table_2 <- function(store_temp = 4,
 
 #' calc_mini_table_3_4
 #'
+#' @param prod_temp temperature in Celsius
+#' @param home_temp temperature in Celsius
+#' @param home_hours period in hours
+#' @param salmon_temp temperature in Celsius
+#' @param salmon_hours period in hours
+#' @param initial_conc initial concentration of bacteria
+#'
+#' @details
 #' This function calculates the values that are seen in the
 #' Transport hjem (H29) and lagring av laks hjemme før laging av sushi
 #' (H35) mini table in the  Excel sheet.
@@ -67,7 +92,11 @@ calc_mini_table_2 <- function(store_temp = 4,
 #' the results table (A54) BUT without the cumulative sum.
 #'
 #' We do the two mini tables together because the reference growth for
-#' the next step depends on the one in the previou step.
+#' the next step depends on the one in the previous step.
+#'
+#' @return a list of calculated data
+#'
+#' @noRd
 calc_mini_table_3_4 <- function(prod_temp = 4,
                                 home_temp = 10,
                                 home_hours = 3,
@@ -106,6 +135,13 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
 
 #' calc_mini_table_5_6
 #'
+#' @param sushi_temp temperature in Celsius
+#' @param sushi_hours period in hours
+#' @param period_temp temperature in Celsius
+#' @param period_hours period in hours
+#' @param initial_conc initial concentration of bacteria
+#'
+#' @details
 #' This function calculates the values that are seen in the
 #' Lagring av sushi hjemme, før temperering (H42) and
 #' Tempereringsperiode (H48) mini table in the
@@ -113,6 +149,10 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
 #'
 #' It returns values that are equivalent to row 1 and row 2 of
 #' the results table (A54) BUT without the cumulative sum.
+#'
+#' @return a list of calculated data
+#'
+#' @noRd
 calc_mini_table_5_6 <- function(sushi_temp = 4,
                                 sushi_hours = 12,
                                 period_temp = 22,
@@ -142,6 +182,19 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
 
 }
 
+#' calc_wrapper
+#'
+#' @description
+#' A wrapper for the calculation functions to produce a single table
+#'
+#' @inheritParams calc_mini_table_1
+#' @inheritParams calc_mini_table_2
+#' @inheritParams calc_mini_table_3_4
+#' @inheritParams calc_mini_table_5_6
+#'
+#' @return a data frame with calculated values
+#'
+#' @noRd
 calc_wrapper <- function(prod_temp = 4,
                          prod_days = 3,
                          store_temp = 4,

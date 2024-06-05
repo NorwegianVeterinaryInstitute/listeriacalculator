@@ -15,7 +15,7 @@ mod_home_ui <- function(id){
 }
 
 #' home Server Functions
-#'
+#' @importFrom shiny includeMarkdown
 #' @noRd
 mod_home_server <- function(id, selected_language){
   moduleServer( id, function(input, output, session){

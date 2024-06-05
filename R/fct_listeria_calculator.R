@@ -1,12 +1,17 @@
-#' Title
+#' translate_and_pivot
 #'
-#' @param dat
-#' @param lang
+#' @description
+#' translate and pivot in ggplot friendly format for plotting
 #'
-#' @return
-#' @export
+#' @param dat a data frame with calculated growth data
+#' @param lang the language to be used for translation
 #'
-#' @examples
+#' @importFrom dplyr relocate everything
+#' @importFrom tidyr pivot_longer
+#'
+#' @return a data frame, ready for ploting.
+#'
+#' @noRd
 translate_and_pivot <- function(dat, lang = "en") {
   dat <- dat |>
     dplyr::relocate(steps, dplyr::everything())
@@ -60,11 +65,14 @@ translate_and_pivot <- function(dat, lang = "en") {
 }
 
 
-#' fct_listeria_calculator
+#' make_plot
 #'
-#' @description A fct function
+#' @description function to make the plot
 #'
-#' @return The return value, if any, from executing the function.
+#' @importFrom dplyr mutate group_by
+#' @importFrom echarts4r e_charts e_line e_x_axis
+#'
+#' @return a plot in echarts format
 #'
 #' @noRd
 
@@ -81,6 +89,22 @@ make_plot <- function(dat) {
 }
 
 
+#' calc_plot_wrapper
+#'
+#' @description
+#' a function that wraps the calculation and plotting to be
+#' used in the shiny module
+#'
+#' @inheritParams calc_mini_table_1
+#' @inheritParams calc_mini_table_2
+#' @inheritParams calc_mini_table_3_4
+#' @inheritParams calc_mini_table_5_6
+#'
+#' @param lang the language to be used for translation
+#'
+#' @return a plot
+#'
+#' @noRd
 calc_plot_wrapper <- function(prod_temp,
                               prod_days,
                               store_temp,

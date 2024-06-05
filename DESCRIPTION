@@ -1,6 +1,6 @@
 Package: listeriacalculator
 Title: Listeria Calculator
-Version: 0.0.0.9000
+Version: 0.0.9
 Authors@R: 
     person("Novica", "Nakov", , "nona@vetinst.no", role = c("cre", "aut"))
 Description: An app to calculate listeria growth in raw fish.
@@ -18,9 +18,10 @@ Imports:
     golem (>= 0.4.1),
     shiny (>= 1.8.1.1),
     shiny.i18n,
-    stringr, 
-    markdown
+    stringr,
+    tidyr
 Suggests: 
+    markdown,
     knitr,
     rmarkdown,
     spelling,

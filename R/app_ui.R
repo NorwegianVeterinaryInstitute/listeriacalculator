@@ -22,7 +22,7 @@ app_ui <- function(request) {
         base_font = bslib::font_face(
           family = "Futura PT",
           style = "Medium",
-          src = "www/Futura PT Medium.ttf"
+          src = "www/Futura_PT_Medium.ttf"
         )
       ),
       inverse = FALSE,
