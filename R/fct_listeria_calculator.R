@@ -79,10 +79,10 @@ translate_and_pivot <- function(dat, lang = "en") {
 
 make_plot <- function(dat) {
   p <- dat |>
-    dplyr::mutate(steps = stringr::str_wrap(.data$steps, 15)) |>
-    dplyr::group_by(.data$category) |>
-    echarts4r::e_charts(.data$steps) |>
-    echarts4r::e_line(.data$value) |>
+    dplyr::mutate(steps = stringr::str_wrap(steps, 15)) |>
+    dplyr::group_by(category) |>
+    echarts4r::e_charts(steps) |>
+    echarts4r::e_line(value) |>
     echarts4r::e_x_axis(axisLabel = list(rotate = 30, interval = 0L))
 
   return(p)
