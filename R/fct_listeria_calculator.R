@@ -8,13 +8,13 @@
 #'
 #' @importFrom dplyr relocate everything
 #' @importFrom tidyr pivot_longer
-#'
+#' @importFrom rlang .data
 #' @return a data frame, ready for ploting.
 #'
 #' @noRd
 translate_and_pivot <- function(dat, lang = "en") {
   dat <- dat |>
-    dplyr::relocate(steps, dplyr::everything())
+    dplyr::relocate(.data$steps, dplyr::everything())
 
   if (lang == "en") {
     names(dat) <- c(
@@ -59,7 +59,7 @@ translate_and_pivot <- function(dat, lang = "en") {
   }
 
   dat_longer <- dat |>
-    tidyr::pivot_longer(!steps, names_to = "category", values_to = "value")
+    tidyr::pivot_longer(!.data$steps, names_to = "category", values_to = "value")
 
 
 }
@@ -71,6 +71,7 @@ translate_and_pivot <- function(dat, lang = "en") {
 #'
 #' @importFrom dplyr mutate group_by
 #' @importFrom echarts4r e_charts e_line e_x_axis
+#' @importFrom rlang .data
 #'
 #' @return a plot in echarts format
 #'
@@ -78,10 +79,10 @@ translate_and_pivot <- function(dat, lang = "en") {
 
 make_plot <- function(dat) {
   p <- dat |>
-    dplyr::mutate(steps = stringr::str_wrap(steps, 15)) |>
-    dplyr::group_by(category) |>
-    echarts4r::e_charts(steps) |>
-    echarts4r::e_line(value) |>
+    dplyr::mutate(steps = stringr::str_wrap(.data$steps, 15)) |>
+    dplyr::group_by(.data$category) |>
+    echarts4r::e_charts(.data$steps) |>
+    echarts4r::e_line(.data$value) |>
     echarts4r::e_x_axis(axisLabel = list(rotate = 30, interval = 0L))
 
   return(p)

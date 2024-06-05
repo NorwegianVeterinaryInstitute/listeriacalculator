@@ -16,6 +16,7 @@ Imports:
     dplyr,
     echarts4r,
     golem (>= 0.4.1),
+    rlang,
     shiny (>= 1.8.1.1),
     shiny.i18n,
     stringr,

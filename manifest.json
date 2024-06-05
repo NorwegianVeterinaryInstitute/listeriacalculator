@@ -1718,15 +1718,15 @@
       "description": {
         "Package": "listeriacalculator",
         "Title": "Listeria Calculator",
-        "Version": "0.0.0.9000",
+        "Version": "0.0.9",
         "Authors@R": "\n    person(\"Novica\", \"Nakov\", , \"nona@vetinst.no\", role = c(\"cre\", \"aut\"))",
         "Description": "An app to calculate listeria growth in raw fish.",
         "License": "Apache License (>= 2)",
         "URL": "https://github.com/norwegianVeterinaryInstitute/listeriacalculator",
         "BugReports": "https://github.com/norwegianVeterinaryInstitute/listeriacalculator/issues",
         "Depends": "R (>= 2.10)",
-        "Imports": "bslib, config (>= 0.3.2), dplyr, echarts4r, golem (>= 0.4.1),\nshiny (>= 1.8.1.1), shiny.i18n, stringr",
-        "Suggests": "knitr, rmarkdown, spelling, testthat (>= 3.0.0)",
+        "Imports": "bslib, config (>= 0.3.2), dplyr, echarts4r, golem (>= 0.4.1),\nshiny (>= 1.8.1.1), shiny.i18n, stringr, tidyr",
+        "Suggests": "markdown, knitr, rmarkdown, spelling, testthat (>= 3.0.0)",
         "Config/testthat/edition": "3",
         "Encoding": "UTF-8",
         "Language": "en-US",
@@ -1737,16 +1737,16 @@
         "RemoteRepo": "listeriacalculator",
         "RemoteUsername": "NorwegianVeterinaryInstitute",
         "RemoteRef": "HEAD",
-        "RemoteSha": "745bd845c957f395b74816cae57fb1227d8c18f3",
+        "RemoteSha": "25845beb867e7469950930582b27e833aedebc8f",
         "GithubRepo": "listeriacalculator",
         "GithubUsername": "NorwegianVeterinaryInstitute",
         "GithubRef": "HEAD",
-        "GithubSHA1": "745bd845c957f395b74816cae57fb1227d8c18f3",
+        "GithubSHA1": "25845beb867e7469950930582b27e833aedebc8f",
         "NeedsCompilation": "no",
-        "Packaged": "2024-05-22 08:15:35 UTC; novica",
+        "Packaged": "2024-06-05 13:04:27 UTC; novica",
         "Author": "Novica Nakov [cre, aut]",
         "Maintainer": "Novica Nakov <nona@vetinst.no>",
-        "Built": "R 4.4.0; ; 2024-05-22 08:15:35 UTC; unix"
+        "Built": "R 4.4.0; ; 2024-06-05 13:04:27 UTC; unix"
       }
     },
     "magrittr": {
@@ -1776,40 +1776,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2022-03-30 07:30:09 UTC",
         "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-05-02 07:31:16 UTC; unix"
-      }
-    },
-    "markdown": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "description": {
-        "Package": "markdown",
-        "Type": "Package",
-        "Title": "Render Markdown with 'commonmark'",
-        "Version": "1.12",
-        "Authors@R": "c(\n   person(\"Yihui\", \"Xie\", role = c(\"aut\", \"cre\"), email = \"xie@yihui.name\", comment = c(ORCID = \"0000-0003-0645-5666\")),\n   person(\"JJ\", \"Allaire\", role = \"aut\"),\n   person(\"Jeffrey\", \"Horner\", role = \"aut\"),\n   person(\"Henrik\", \"Bengtsson\", role = \"ctb\"),\n   person(\"Jim\", \"Hester\", role = \"ctb\"),\n   person(\"Yixuan\", \"Qiu\", role = \"ctb\"),\n   person(\"Kohske\", \"Takahashi\", role = \"ctb\"),\n   person(\"Adam\", \"November\", role = \"ctb\"),\n   person(\"Nacho\", \"Caballero\", role = \"ctb\"),\n   person(\"Jeroen\", \"Ooms\", role = \"ctb\"),\n   person(\"Thomas\", \"Leeper\", role = \"ctb\"),\n   person(\"Joe\", \"Cheng\", role = \"ctb\"),\n   person(\"Andrzej\", \"Oles\", role = \"ctb\"),\n   person(given = \"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n   )",
-        "Description": "Render Markdown to full and lightweight HTML/LaTeX documents with\n    the 'commonmark' package. It also supports features that are missing in\n    'commonmark', such as raw HTML/LaTeX blocks, LaTeX math, superscripts,\n    subscripts, footnotes, element attributes, appendices, and fenced 'Divs'.\n    With additional JavaScript and CSS, it can also create HTML slides and\n    articles.",
-        "Depends": "R (>= 2.11.1)",
-        "Imports": "utils, commonmark (>= 1.9.0), xfun (>= 0.38)",
-        "Suggests": "knitr, rmarkdown (>= 2.18), yaml, RCurl",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/rstudio/markdown",
-        "BugReports": "https://github.com/rstudio/markdown/issues",
-        "VignetteBuilder": "knitr",
-        "RoxygenNote": "7.2.3",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2023-12-05 14:26:48 UTC; yihui",
-        "Author": "Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\n  JJ Allaire [aut],\n  Jeffrey Horner [aut],\n  Henrik Bengtsson [ctb],\n  Jim Hester [ctb],\n  Yixuan Qiu [ctb],\n  Kohske Takahashi [ctb],\n  Adam November [ctb],\n  Nacho Caballero [ctb],\n  Jeroen Ooms [ctb],\n  Thomas Leeper [ctb],\n  Joe Cheng [ctb],\n  Andrzej Oles [ctb],\n  Posit Software, PBC [cph, fnd]",
-        "Maintainer": "Yihui Xie <xie@yihui.name>",
-        "Repository": "CRAN",
-        "Date/Publication": "2023-12-06 00:20:02 UTC",
-        "Built": "R 4.4.0; ; 2024-05-08 08:24:45 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "markdown",
-        "RemoteRef": "markdown",
-        "RemoteRepos": "https://cran.rstudio.com/",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.12"
       }
     },
     "memoise": {
@@ -2974,7 +2940,7 @@
         "License_is_FOSS": "yes",
         "Repository": "CRAN",
         "Date/Publication": "2024-05-06 15:00:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-05-22 08:04:44 UTC; unix"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-06-05 11:34:22 UTC; unix"
       }
     },
     "stringr": {
@@ -3658,13 +3624,13 @@
       "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
     ".Rbuildignore": {
-      "checksum": "3f8eb3f05b7d9d06d775c48ff8a57481"
+      "checksum": "15e8a3d82659359dabd71cc4bf52e5cc"
     },
     "app.R": {
       "checksum": "4dcac6a516a39eeadaec0650c097baee"
     },
     "DESCRIPTION": {
-      "checksum": "03e1b7f4dc4857c9b81c51429bf79bca"
+      "checksum": "45917e2f4b79ea71a413fbaf86f1a892"
     },
     "dev/01_start.R": {
       "checksum": "5ee8d74297b14aa021f09e27637a94b0"
@@ -3690,7 +3656,7 @@
     "inst/app/www/favicon.ico": {
       "checksum": "9a6a0ccba730b1da510c6da3e6adb249"
     },
-    "inst/app/www/Futura PT Medium.ttf": {
+    "inst/app/www/Futura_PT_Medium.ttf": {
       "checksum": "13cae84a07833c30c206ee4d6f19dcf1"
     },
     "inst/app/www/header.css": {
@@ -3703,7 +3669,7 @@
       "checksum": "d8d64f100eb8ac9bfb95e633fa494007"
     },
     "inst/app/www/translation.json": {
-      "checksum": "b28a8a6c809c8574d28e87ac3379086e"
+      "checksum": "6f54886f4133828802960d6b0f8b4f30"
     },
     "inst/app/www/vet-rgb-2.svg": {
       "checksum": "92b7a4ec5ba6d7f6cf15ff2ebf34c9e7"
@@ -3721,10 +3687,10 @@
       "checksum": "db153f001c7c98594f4a6e64193fbf8a"
     },
     "NAMESPACE": {
-      "checksum": "6f3b4ed418503726d15d49e3f0587b23"
+      "checksum": "c2506d582a8549087129f73721c40e3d"
     },
     "NEWS.md": {
-      "checksum": "0dd7ed4a733a371b410d8339651f1dd1"
+      "checksum": "7b399134fd530cf23c9a5c3ff4c3caa9"
     },
     "R/_disable_autoload.R": {
       "checksum": "1178c335d6c11555fd1c4ec6098dfee6"
@@ -3736,10 +3702,13 @@
       "checksum": "5f2fd4f70527612005d6625223fec505"
     },
     "R/app_ui.R": {
-      "checksum": "4e4e61174765d1ef766bef893edc2cce"
+      "checksum": "450c3f1269254aebe2e9e37b7d4f57ff"
+    },
+    "R/fct_calculate_model.R": {
+      "checksum": "82eb7d1d1096675b4b2a3e336bd30b37"
     },
     "R/fct_listeria_calculator.R": {
-      "checksum": "190c4c329f2608b729379c4e44d86308"
+      "checksum": "c4a47fc9d9059c4b8b35944dcf73b4c7"
     },
     "R/golem_utils_server.R": {
       "checksum": "c2998ee5dbb57c9af79904bc79133f74"
@@ -3751,13 +3720,13 @@
       "checksum": "14737537f2eafd1cee0668535c37d6e7"
     },
     "R/mod_about.R": {
-      "checksum": "2f5bacf4911d973adfd803cde7401ed0"
+      "checksum": "8d431e7fe0398e23fcea5e52486d6620"
     },
     "R/mod_home.R": {
-      "checksum": "a7ae27b5bbf58f494bccbb95d491af09"
+      "checksum": "95f7c7b7d297dc74f1a40ef0a2d5b3ec"
     },
     "R/mod_listeria_calculator.R": {
-      "checksum": "531f03ca74bfc65e6a2eeaa828665115"
+      "checksum": "15782d5e6568088baad88363ea89bd65"
     },
     "R/run_app.R": {
       "checksum": "0510f2195876d2246b8bd4fe1da37f03"
