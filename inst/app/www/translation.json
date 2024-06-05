@@ -24,6 +24,12 @@
       "en": "Temperature (0 - 10°C)",
       "nb": "Temperatur (0 - 10°C)"},
     {
+      "en": "Temperature (0 - 25°C)",
+      "nb": "Temperatur (0 - 25°C)"},
+    {
+      "en": "Temperature (15 - 25°C)",
+      "nb": "Temperatur (15 - 25°C)"},
+    {
       "en": "Days",
       "nb": "Dager"},
     {
