@@ -1,74 +1,63 @@
+#' Title
+#'
+#' @param dat
+#' @param lang
+#'
+#' @return
+#' @export
+#'
+#' @examples
+translate_and_pivot <- function(dat, lang = "en") {
+  dat <- dat |>
+    dplyr::relocate(steps, dplyr::everything())
 
-
-#' calc_growth
-#' 
-#' Calculate listeria growth rate given a default growth rate and a 
-#' default temperature
-#'
-#' @param temperature 
-#' @param scale
-#'
-#' @return number, calculated growth rate
-calc_growth <- function(temperature, start_temp, start_growth, scale = NULL) {
-  
-  if (scale) {
-    start_growth * scale * (temperature + 1.5) ^ 2 / (start_temp + 1.5) ^ 2
-  } 
-  
-  start_growth * (temperature + 1.5) ^ 2 / (start_temp + 1.5) ^ 2
-}
-
-
-#' log_growth
-#'
-#' Calculate the logarithmic growth of listeria
-#'
-#' @param temperature
-#' @param time
-#' @param concetration
-#'
-#' @return number, calculated log
-log_growth <- function(temperature, time, concetration) {
-  if (concetration == 0) {
-    time * calc_growth(temperature)
+  if (lang == "en") {
+    names(dat) <- c(
+      "steps",
+      "reference",
+      "test conditions - most likely growth",
+      "test conditions - least growth",
+      "test conditions - most growth",
+      "legal limit",
+      "limit for greater likelihood of listeriosis cases among vulnerable consumers",
+      "limit for greater likelihood of listeriosis cases among healthy adult consumers"
+    )
+    dat$steps <- c(
+      "initial concentration in salmon",
+      "shipment of salmon from company",
+      "when purchasing salmon in store",
+      "in salmon when it arrives home",
+      "in salmon stored at home",
+      "in sushi stored at home",
+      "after tempering sushi"
+    )
   } else {
-    concetration + (time * calc_growth(temperature))
+    names(dat) <- c(
+      "steps",
+      "referanse",
+      "testforhold-mest sannsynlig vekst",
+      "testforhold minst vekst",
+      "testforhold mest vekst",
+      "	grenseverdi i lovverket",
+      "grenseverdi for større sannsynlegheit for listeriosetilfeller hjå utsett forbrukarer",
+      "grenseverdi for større sannsynlegheit for listeriosetilfeller hjå friske, vaksne forbrukarer"
+    )
+    dat$steps <- c(
+      "startkonsentrasjon i laks",
+      "utsending av laks frå bedrift",
+      "ved innkjøp av laks i butikk",
+      "i laks når fisken kjem heim",
+      "i laks lagra heime",
+      "i sushi lagra heime",
+      "etter temperering av sushi"
+    )
   }
-}
 
-calc_column <- function(var = "ref",
-                        prod_temp = 4,
-                        prod_days = 3,
-                        store_temp = 4,
-                        store_days = 3,
-                        home_temp = 10,
-                        home_hours = 3,
-                        salmon_temp = 10,
-                        salmon_hours = 3,
-                        sushi_temp = 4,
-                        sushi_hours = 12,
-                        period_temp = 22,
-                        period_hours = 6,
-                        initial_conc = 1) {
-  
-  if (var == "ref") {
-    
-    start <- log(initial_conc)
-    prod <- log_growth(temperature = prod_temp, time = prod_days*24, concetration = start)
-    store <- log_growth(temperature = store_temp, time = store_days*24, concetration = prod)
-    home <- log_growth(temperature = home_temp, time = home_hours, concetration = store)
-    salmon <- log_growth(temperature = salmon_temp, time = salmon_hours, concetration = home)
-    sushi <- log_growth(temperature = sushi_temp, time = sushi_hours, concetration = salmon)
-    period <- log_growth(temperature = period_temp, time = period_hours, concetration = sushi)
-    
-    return(c(start = start, prod = prod, store = store, 
-             home = home, salmon = salmon,
-             sushi = sushi, period = period))
-  }
-  
-  
-}
+  dat_longer <- dat |>
+    tidyr::pivot_longer(!steps, names_to = "category", values_to = "value")
 
+
+}
 
 
 #' fct_listeria_calculator
@@ -79,30 +68,52 @@ calc_column <- function(var = "ref",
 #'
 #' @noRd
 
-make_plot <- function(prod_temp = 4,
-                      prod_days = 3,
-                      store_temp = 4,
-                      store_days = 3,
-                      home_temp = 10,
-                      home_hours = 3,
-                      salmon_temp = 10,
-                      salmon_hours = 3,
-                      sushi_temp = 4,
-                      sushi_hours = 12,
-                      period_temp = 22,
-                      period_hours = 6,
-                      initial_conc = 1,
-                      lang = "en") {
-
-
-
+make_plot <- function(dat) {
   p <- dat |>
-    dplyr::mutate(name = stringr::str_wrap(name, 15)) |>
+    dplyr::mutate(steps = stringr::str_wrap(steps, 15)) |>
     dplyr::group_by(category) |>
-    echarts4r::e_charts(name) |>
+    echarts4r::e_charts(steps) |>
     echarts4r::e_line(value) |>
     echarts4r::e_x_axis(axisLabel = list(rotate = 30, interval = 0L))
 
   return(p)
 
 }
+
+
+calc_plot_wrapper <- function(prod_temp,
+                              prod_days,
+                              store_temp,
+                              store_days,
+                              home_temp,
+                              home_hours,
+                              salmon_temp,
+                              salmon_hours,
+                              sushi_temp,
+                              sushi_hours,
+                              period_temp,
+                              period_hours,
+                              initial_conc,
+                              lang) {
+  dat <- calc_wrapper(
+    prod_temp,
+    prod_days,
+    store_temp,
+    store_days,
+    home_temp,
+    home_hours,
+    salmon_temp,
+    salmon_hours,
+    sushi_temp,
+    sushi_hours,
+    period_temp,
+    period_hours,
+    initial_conc
+  )
+
+  dat_long <- translate_and_pivot(dat, lang)
+  p <- make_plot(dat = dat_long)
+
+  return(p)
+}
+
