@@ -206,6 +206,19 @@ mod_listeria_calculator_server <- function(id, selected_language){
     )
 
     output$listeria_plot <- echarts4r::renderEcharts4r({
+      lapply(c("prod_temp",
+               "prod_days",
+               "store_temp",
+               "store_days",
+               "home_temp",
+               "home_hours",
+               "salmon_temp",
+               "salmon_hours",
+               "sushi_temp",
+               "sushi_hours",
+               "period_temp",
+               "period_hours",
+               "initial_conc"), function(x) {req(input[[x]])})
       calc_plot_wrapper(
         prod_temp = input$prod_temp,
         prod_days = input$prod_days,
