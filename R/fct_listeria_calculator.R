@@ -43,7 +43,7 @@ translate_and_pivot <- function(dat, lang = "en") {
       "testforhold-mest sannsynlig vekst",
       "testforhold minst vekst",
       "testforhold mest vekst",
-      "	grenseverdi i lovverket",
+      "grenseverdi i lovverket",
       "grenseverdi for større sannsynlegheit for listeriosetilfeller hjå utsett forbrukarer",
       "grenseverdi for større sannsynlegheit for listeriosetilfeller hjå friske, vaksne forbrukarer"
     )
@@ -79,11 +79,11 @@ translate_and_pivot <- function(dat, lang = "en") {
 
 make_plot <- function(dat) {
   p <- dat |>
-    dplyr::mutate(steps = stringr::str_wrap(steps, 15)) |>
-    dplyr::group_by(category) |>
-    echarts4r::e_charts(steps) |>
-    echarts4r::e_line(value) |>
-    echarts4r::e_x_axis(axisLabel = list(rotate = 30, interval = 0L))
+    dplyr::mutate(steps = stringr::str_wrap(.data$steps, 15)) |>
+    dplyr::group_by(.data$category) |>
+    echarts4r::e_charts_("steps") |>
+    echarts4r::e_line_("value") |>
+    echarts4r::e_x_axis_(axisLabel = list(rotate = 30, interval = 0L))
 
   return(p)
 
@@ -120,6 +120,7 @@ calc_plot_wrapper <- function(prod_temp,
                               period_hours,
                               initial_conc,
                               lang) {
+
   dat <- calc_wrapper(
     prod_temp,
     prod_days,
