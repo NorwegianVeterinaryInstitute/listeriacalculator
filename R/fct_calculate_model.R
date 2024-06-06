@@ -26,7 +26,7 @@ calc_mini_table_1 <- function(prod_temp = 4,
   ref_temp <- 4
   ref_days <- 3
 
-  likely_growth <- ref_growth * (prod_temp + 1.5) ^ 2 / (prod_temp + 1.5) ^ 2
+  likely_growth <- ref_growth * (prod_temp + 1.5) ^ 2 / (ref_temp + 1.5) ^ 2
   row_1 <- c(
     reference = 0,
     likely = log_ic ,
@@ -70,7 +70,7 @@ calc_mini_table_2 <- function(store_temp = 4,
   ref_growth <- 0.007343
   ref_temp <- 4
   ref_days <- 3
-  likely_growth <- ref_growth * (store_temp + 1.5) ^ 2 / (store_temp + 1.5) ^ 2
+  likely_growth <- ref_growth * (store_temp + 1.5) ^ 2 / (ref_temp + 1.5) ^ 2
   row_3 <- c(
     reference = ref_growth * ref_days * 24,
     likely = likely_growth * store_days * 24,
@@ -119,7 +119,7 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
   ref_temp <- 10
   ref_hours <- 3
 
-  likely_growth <- ref_growth
+  likely_growth <- ref_growth * (home_temp + 1.5) ^ 2 / (ref_temp + 1.5) ^ 2
 
   row_4 <- c(
     reference = ref_growth * ref_hours,
@@ -133,7 +133,7 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
   ref_temp_2 <- 10
   ref_hours_2 <- 3
 
-  likely_growth_2 <- ref_growth_2
+  likely_growth_2 <- ref_growth_2 * (salmon_temp + 1.5) ^ 2 / (ref_temp_2 + 1.5) ^ 2
 
   row_5 <- c(
     reference = ref_growth_2 * ref_hours_2,
@@ -179,7 +179,7 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
   ref_growth <- 0.00286
   ref_temp <- 4
   ref_hours <- 12
-  likely_growth <- ref_growth * (sushi_temp + 1.5) ^ 2 / (sushi_temp + 1.5) ^ 2
+  likely_growth <- ref_growth * (sushi_temp + 1.5) ^ 2 / (ref_temp + 1.5) ^ 2
   row_6 <- c(
     reference = ref_growth * ref_hours,
     likely = likely_growth * sushi_hours,
@@ -190,7 +190,7 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
   ref_growth_2 <- 0.06
   ref_temp_2 <- 22
   ref_hours_2 <- 6
-  likely_growth_2 <- ref_growth_2 * (period_temp + 1.5) ^ 2 / (period_temp + 1.5) ^ 2
+  likely_growth_2 <- ref_growth_2 * (period_temp + 1.5) ^ 2 / (ref_temp_2 + 1.5) ^ 2
   row_7 <- c(
     reference = ref_growth_2 * ref_hours_2,
     likely = likely_growth_2 * period_hours,
