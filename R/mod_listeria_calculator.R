@@ -60,7 +60,7 @@ mod_listeria_calculator_server <- function(id, selected_language){
                  shiny::numericInput(
                    ns("prod_days"),
                    label = i18n()$t("Days"),
-                   value = 3
+                   value = 4
                  ))
         ),
         fluidRow(column(12, align = "center",
