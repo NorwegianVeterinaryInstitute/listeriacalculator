@@ -181,7 +181,7 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
   ref_hours <- 12
   likely_growth <- ref_growth * (sushi_temp + 1.5) ^ 2 / (sushi_temp + 1.5) ^ 2
   row_6 <- c(
-    reference = ref_growth * ref_temp,
+    reference = ref_growth * ref_hours,
     likely = likely_growth * sushi_hours,
     min = 0.9 * likely_growth * sushi_hours,
     max = 1.1 * likely_growth * sushi_hours
@@ -192,7 +192,7 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
   ref_hours_2 <- 6
   likely_growth_2 <- ref_growth_2 * (period_temp + 1.5) ^ 2 / (period_temp + 1.5) ^ 2
   row_7 <- c(
-    reference = ref_growth_2 * ref_temp_2,
+    reference = ref_growth_2 * ref_hours_2,
     likely = likely_growth_2 * period_hours,
     min = 0.9 * likely_growth_2 * period_hours,
     max = 1.1 * likely_growth_2 * period_hours
