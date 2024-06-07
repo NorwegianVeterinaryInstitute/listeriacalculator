@@ -119,6 +119,7 @@ calc_plot_wrapper <- function(prod_temp,
                               period_temp,
                               period_hours,
                               initial_conc,
+                              sushi_pctg,
                               lang) {
 
   dat <- calc_wrapper(
@@ -134,6 +135,7 @@ calc_plot_wrapper <- function(prod_temp,
     sushi_hours,
     period_temp,
     period_hours,
+    sushi_pctg,
     initial_conc
   )
 
