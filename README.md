@@ -1,50 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# listeriacalculator
+# Listeria Calculator
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of listeriacalculator is to …
+This is a R Shiny Golem app for calculating listeria growth in raw fish.
 
-## Installation
+It is deployed to Posit Connect server from git using a `manifest.json`
+file.
 
-You can install the development version of listeriacalculator like so:
+Since the app is a package, the `manifest.json` has to capture it in the
+environment to be successfully deployed. Therefore before running the
+`rsconnect::writeManifest()` command in an R session, the package needs
+to be installed from Github with, for example:
+`remotes::install_github("NorwegianVeterinaryInstitute/listeriacalculator")`.
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
-```
+The `manifest.json` has to be rebuild when a new dependency is added.
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(listeriacalculator)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Refer to the function(s) documentations for the details about the
+modelling.
