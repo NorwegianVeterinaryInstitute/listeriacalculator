@@ -177,10 +177,15 @@ mod_listeria_calculator_server <- function(id, selected_language){
           selected = 1,
           inline = TRUE,
           width = "100%"
-        ))
-
-
-
+        )),
+        shiny::div(class="text-center",
+        shiny::sliderInput(
+          ns("sushi_pctg"),
+          label = "Percentage of salmon in sushi", 
+          min = 0, 
+          max = 100, 
+          value = 20, 
+          ticks = TRUE))
       )
 
     })
@@ -218,7 +223,8 @@ mod_listeria_calculator_server <- function(id, selected_language){
                "sushi_hours",
                "period_temp",
                "period_hours",
-               "initial_conc"), function(x) {req(input[[x]])})
+               "initial_conc",
+               "sushi_pctg"), function(x) {req(input[[x]])})
       calc_plot_wrapper(
         prod_temp = input$prod_temp,
         prod_days = input$prod_days,
@@ -233,6 +239,7 @@ mod_listeria_calculator_server <- function(id, selected_language){
         period_temp = input$period_temp,
         period_hours = input$period_hours,
         initial_conc = input$initial_conc,
+        sushi_pctg = input$sushi_pctg,
         lang = i18n()$get_translation_language()
       )
     }
