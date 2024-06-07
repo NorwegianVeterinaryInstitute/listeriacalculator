@@ -113,7 +113,8 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
                                 home_temp = 10,
                                 home_hours = 3,
                                 salmon_temp = 10,
-                                salmon_hours = 3) {
+                                salmon_hours = 3,
+                                sushi_pctg = 20) {
 
   ref_growth <- 0.007343 * (10 + 1.5) ^ 2 / (4 + 1.5) ^ 2
   ref_temp <- 10
@@ -142,7 +143,13 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
     max = 1.1 * likely_growth * salmon_hours
   )
 
-  return(list(home = row_4, salmon = row_5))
+  # here we use salmon % to decrease the value of row_5
+  
+  sushi_log <- log10(sushi_pctg/100)
+  
+  row_5_sushi <- row_5 - sushi_log
+  
+  return(list(home = row_4, salmon = row_5_sushi))
 
 }
 
@@ -227,7 +234,8 @@ calc_wrapper <- function(prod_temp = 4,
                          sushi_hours = 12,
                          period_temp = 22,
                          period_hours = 6,
-                         initial_conc = 1) {
+                         initial_conc = 1, 
+                         sushi_pctg = 20) {
   dat_1 <- calc_mini_table_1(
     prod_temp = prod_temp,
     prod_days = prod_days,
