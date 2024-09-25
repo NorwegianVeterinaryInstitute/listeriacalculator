@@ -505,7 +505,7 @@
       "RemoteUsername": "norwegianveterinaryinstitute",
       "RemoteRepo": "listeriacalculator",
       "RemoteRef": "main",
-      "RemoteSha": "88a371c9f3c1707201143a5f8a952d0933c314ad"
+      "RemoteSha": "f24b6e726e1792319a2fa3f94801433dd26f9e5d"
     },
     "magrittr": {
       "Package": "magrittr",
