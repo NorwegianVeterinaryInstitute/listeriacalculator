@@ -145,7 +145,7 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
 
   # here we use salmon % to decrease the value of row_5
   
-  sushi_log <- log10(sushi_pctg/100)
+  sushi_log <- log10(as.numeric(sushi_pctg)/100)
   
   row_5_sushi <- row_5 - sushi_log
   
@@ -250,7 +250,8 @@ calc_wrapper <- function(prod_temp = 4,
     home_temp = home_temp,
     home_hours = home_hours,
     salmon_temp = salmon_temp,
-    salmon_hours = salmon_hours
+    salmon_hours = salmon_hours,
+    sushi_pctg = sushi_pctg
   )
   dat_4 <- calc_mini_table_5_6(
     sushi_temp = sushi_temp,
