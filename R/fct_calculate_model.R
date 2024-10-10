@@ -113,8 +113,7 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
                                 home_temp = 10,
                                 home_hours = 3,
                                 salmon_temp = 10,
-                                salmon_hours = 3,
-                                sushi_pctg = 20) {
+                                salmon_hours = 3) {
 
   ref_growth <- 0.007343 * (10 + 1.5) ^ 2 / (4 + 1.5) ^ 2
   ref_temp <- 10
@@ -143,13 +142,8 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
     max = 1.1 * likely_growth * salmon_hours
   )
 
-  # here we use salmon % to decrease the value of row_5
   
-  sushi_log <- log10(sushi_pctg/100)
-  
-  row_5_sushi <- row_5 - sushi_log
-  
-  return(list(home = row_4, salmon = row_5_sushi))
+  return(list(home = row_4, salmon = row_5))
 
 }
 
@@ -181,7 +175,8 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
 calc_mini_table_5_6 <- function(sushi_temp = 4,
                                 sushi_hours = 12,
                                 period_temp = 22,
-                                period_hours = 6) {
+                                period_hours = 6,
+                                sushi_pctg = 20) {
 
   ref_growth <- 0.00286
   ref_temp <- 4
@@ -205,7 +200,13 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
     max = 1.1 * likely_growth_2 * period_hours
   )
 
-  return(list(sushi = row_6, period = row_7))
+  # here we use salmon % to decrease the value of row_6
+  
+  sushi_log <- log10(sushi_pctg/100)
+  
+  row_6_sushi <- row_6 - sushi_log
+  
+  return(list(sushi = row_6_sushi, period = row_7))
 
 }
 
@@ -256,7 +257,8 @@ calc_wrapper <- function(prod_temp = 4,
     sushi_temp = sushi_temp,
     sushi_hours = sushi_hours,
     period_temp = period_temp,
-    period_hours = period_hours
+    period_hours = period_hours,
+    sushi_pctg = sushi_pctg
   )
   dat <- data.frame(rbind(
     t(data.frame(dat_1)),

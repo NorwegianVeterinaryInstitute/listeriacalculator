@@ -123,20 +123,20 @@ calc_plot_wrapper <- function(prod_temp,
                               lang) {
 
   dat <- calc_wrapper(
-    prod_temp,
-    prod_days,
-    store_temp,
-    store_days,
-    home_temp,
-    home_hours,
-    salmon_temp,
-    salmon_hours,
-    sushi_temp,
-    sushi_hours,
-    period_temp,
-    period_hours,
-    sushi_pctg,
-    initial_conc
+    prod_temp = prod_temp,
+    prod_days = prod_days,
+    store_temp = store_temp,
+    store_days = store_days,
+    home_temp = home_temp,
+    home_hours = home_hours,
+    salmon_temp = salmon_temp,
+    salmon_hours = salmon_hours,
+    sushi_temp = sushi_temp,
+    sushi_hours = sushi_hours,
+    period_temp = period_temp,
+    period_hours = period_hours,
+    initial_conc = initial_conc,
+    sushi_pctg = sushi_pctg
   )
 
   dat_long <- translate_and_pivot(dat, lang)
@@ -144,4 +144,3 @@ calc_plot_wrapper <- function(prod_temp,
 
   return(p)
 }
-
