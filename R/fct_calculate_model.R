@@ -204,7 +204,7 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
   
   sushi_log <- log10(sushi_pctg/100)
   
-  row_6_sushi <- row_6 - sushi_log
+  row_6_sushi <- row_6 + sushi_log
   
   return(list(sushi = row_6_sushi, period = row_7))
 
