@@ -129,7 +129,7 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
   )
 
 
-  ref_growth_2 <- ref_growth * (10 + 1.5) ^ 2 / (10 + 1.5) ^ 2
+  ref_growth_2 <- 0.007343 * (10 + 1.5) ^ 2 / (10 + 1.5) ^ 2
   ref_temp_2 <- 10
   ref_hours_2 <- 3
 
