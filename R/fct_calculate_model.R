@@ -138,8 +138,8 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
   row_5 <- c(
     reference = ref_growth_2 * ref_hours_2,
     likely = likely_growth_2 * salmon_hours,
-    min = 0.9 * likely_growth * salmon_hours,
-    max = 1.1 * likely_growth * salmon_hours
+    min = 0.9 * likely_growth_2 * salmon_hours,
+    max = 1.1 * likely_growth_2 * salmon_hours
   )
 
   
