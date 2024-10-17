@@ -13,20 +13,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Listeria Calculator
+# Listeria  Calculator
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-This is a R Shiny Golem app for calculating listeria growth in raw fish.
+This calculator illustrates the storage conditions of salmon that result in higher concentrations than 100 Listeria monocytogenes per gram of sushi.
 
-It is deployed to Posit Connect server from git using a `manifest.json` file.
+Enter time and temperature data for the steps from slaughter to finished sushi that you have an overview of, and see how big an effect small and large deviations correspond to. On the steps you do not have an overview of, start with the data we have set up in the reference case.
 
-Since the app is a package, the `manifest.json` has to capture it in the 
-environment to be successfully deployed. Therefore before running the 
-`rsconnect::writeManifest()` command in an R session, the package needs 
-to be installed from Github with, for example: `remotes::install_github("NorwegianVeterinaryInstitute/listeriacalculator")`. 
-
-The `manifest.json` has to be rebuild when a new dependency is added.
-
-Refer to the function(s) documentations for the details about the modelling.
+The calculator is not a substitute for other requirements in the regulations, only a supplement.
