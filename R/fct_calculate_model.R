@@ -129,7 +129,7 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
   )
 
 
-  ref_growth_2 <- ref_growth * (10 + 1.5) ^ 2 / (10 + 1.5) ^ 2
+  ref_growth_2 <- 0.007343 * (10 + 1.5) ^ 2 / (10 + 1.5) ^ 2
   ref_temp_2 <- 10
   ref_hours_2 <- 3
 
@@ -138,10 +138,11 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
   row_5 <- c(
     reference = ref_growth_2 * ref_hours_2,
     likely = likely_growth_2 * salmon_hours,
-    min = 0.9 * likely_growth * salmon_hours,
-    max = 1.1 * likely_growth * salmon_hours
+    min = 0.9 * likely_growth_2 * salmon_hours,
+    max = 1.1 * likely_growth_2 * salmon_hours
   )
 
+  
   return(list(home = row_4, salmon = row_5))
 
 }
@@ -174,7 +175,8 @@ calc_mini_table_3_4 <- function(prod_temp = 4,
 calc_mini_table_5_6 <- function(sushi_temp = 4,
                                 sushi_hours = 12,
                                 period_temp = 22,
-                                period_hours = 6) {
+                                period_hours = 6,
+                                sushi_pctg = 20) {
 
   ref_growth <- 0.00286
   ref_temp <- 4
@@ -198,7 +200,13 @@ calc_mini_table_5_6 <- function(sushi_temp = 4,
     max = 1.1 * likely_growth_2 * period_hours
   )
 
-  return(list(sushi = row_6, period = row_7))
+  # here we use salmon % to decrease the value of row_6
+  
+  sushi_log <- log10(sushi_pctg/100)
+  
+  row_6_sushi <- row_6 + sushi_log
+  
+  return(list(sushi = row_6_sushi, period = row_7))
 
 }
 
@@ -227,7 +235,8 @@ calc_wrapper <- function(prod_temp = 4,
                          sushi_hours = 12,
                          period_temp = 22,
                          period_hours = 6,
-                         initial_conc = 1) {
+                         initial_conc = 1, 
+                         sushi_pctg = 20) {
   dat_1 <- calc_mini_table_1(
     prod_temp = prod_temp,
     prod_days = prod_days,
@@ -248,7 +257,8 @@ calc_wrapper <- function(prod_temp = 4,
     sushi_temp = sushi_temp,
     sushi_hours = sushi_hours,
     period_temp = period_temp,
-    period_hours = period_hours
+    period_hours = period_hours,
+    sushi_pctg = sushi_pctg
   )
   dat <- data.frame(rbind(
     t(data.frame(dat_1)),

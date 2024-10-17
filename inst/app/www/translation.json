@@ -52,8 +52,10 @@
       "nb": "Tempereringsperiode"},
     {
       "en": "Initial concetration",
-      "nb": "Startkonsentrasjon"}
-
+      "nb": "Startkonsentrasjon"},
+    {
+      "en": "Percentage of salmon in sushi",
+      "nb": "Andel laks i sushi"}
   ]
 }
 
