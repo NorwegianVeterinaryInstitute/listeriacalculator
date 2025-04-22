@@ -1503,6 +1503,17 @@
       "Maintainer": "Lionel Henry <lionel@posit.co>",
       "Repository": "CRAN"
     },
+    "listeriacalculator": {
+      "Package": "listeriacalculator",
+      "Version": "0.0.9",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "NorwegianVeterinaryInstitute",
+      "RemoteRepo": "listeriacalculator",
+      "RemoteRef": "main",
+      "RemoteSha": "ae070979de8220d380b3ef1ba3c92b7a4fec9e9b"
+    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
