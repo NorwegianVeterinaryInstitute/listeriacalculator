@@ -1520,6 +1520,12 @@
       "RemoteRef": "main",
       "RemoteSha": "ae070979de8220d380b3ef1ba3c92b7a4fec9e9b"
     },
+    "litedown": {
+      "Package": "litedown",
+      "Version": "0.7",
+      "Source": "Repository",
+      "Repository": "CRAN"
+    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
