@@ -23,10 +23,11 @@ app_ui <- function(request) {
           family = "Futura PT",
           style = "Medium",
           src = "www/Futura_PT_Medium.ttf"
-        )
+        )),
+        navbar_options =bslib::navbar_options(
+          underline = FALSE,
+          inverse = FALSE
       ),
-      inverse = FALSE,
-      underline = FALSE,
 
       bslib::nav_item(
         shiny::tags$a(
