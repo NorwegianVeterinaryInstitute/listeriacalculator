@@ -15,15 +15,7 @@ app_ui <- function(request) {
 
     # Your application UI logic
     bslib::page_navbar(
-      theme = bslib::bs_theme(
-        bootswatch = "zephyr",
-        version = 5,
-        font_scale = 0.8,
-        base_font = bslib::font_face(
-          family = "Futura PT",
-          style = "Medium",
-          src = "www/Futura_PT_Medium.ttf"
-        )),
+      theme = bslib::bs_theme(brand = TRUE),
         navbar_options =bslib::navbar_options(
           underline = FALSE,
           inverse = FALSE
@@ -32,7 +24,7 @@ app_ui <- function(request) {
       bslib::nav_item(
         shiny::tags$a(
           style = "padding: 0;",
-          shiny::img(src = "www/vet-rgb-2.svg", height = "40px"),
+          shiny::img(src = "www/vetinst-logo-eng.png", height = "40px"),
           href = "https://www.vetinst.no/",
           target = "_blank"
         )
@@ -74,7 +66,7 @@ golem_add_external_resources <- function() {
   )
 
   tags$head(
-    favicon(),
+    favicon(ext = "png"),
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "listeriacalculator"

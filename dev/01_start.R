@@ -55,7 +55,7 @@ golem::use_recommended_tests()
 
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
-golem::use_favicon(path = "/home/novica/src/nvi/licecalc/inst/app/www/favicon.ico") # path = "path/to/ico". Can be an online file.
+golem::use_favicon(path = "https://www.vetinst.no/_/asset/com.vetinst:0000019594d37950/images/favicon/favicon-32x32.png") # path = "path/to/ico". Can be an online file.
 # golem::remove_favicon() # Uncomment to remove the default favicon
 
 ## Add helper functions ----
