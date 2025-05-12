@@ -8,6 +8,15 @@ app_ui <- function(request) {
   i18n <- golem::get_golem_options(which = "translator")
   i18n$set_translation_language("en")
 
+  metathis::meta() %>%
+    metathis::meta_social(
+      title = "Listeria Calculator",
+      description = "Listeria Calculator for Raw Fish",
+      url = "https://connect.posit.vetinst.no/listeriacalculator",
+      image = "https://www.vetinst.no/_/image/5c4e853a-130b-4e7f-92a3-8ca38bec0b56:2dcf9428a329fc0044b412c55b8c9e471f742d65/block-1200-630/Logo-vetinst-open-graph-no-svg-1200x630.png.jpg",
+      image_alt = "An image for social meda cards"
+    )
+
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
@@ -16,11 +25,10 @@ app_ui <- function(request) {
     # Your application UI logic
     bslib::page_navbar(
       theme = bslib::bs_theme(brand = TRUE),
-        navbar_options =bslib::navbar_options(
-          underline = FALSE,
-          inverse = FALSE
+      navbar_options = bslib::navbar_options(
+        underline = FALSE,
+        inverse = FALSE
       ),
-
       bslib::nav_item(
         shiny::tags$a(
           style = "padding: 0;",
@@ -31,7 +39,6 @@ app_ui <- function(request) {
       ),
       bslib::nav_spacer(),
       bslib::nav_item(shiny::uiOutput("app_title")),
-
       bslib::nav_spacer(),
       bslib::nav_panel(title = shiny::uiOutput("home_tab"), mod_home_ui("home_1")),
       bslib::nav_panel(
@@ -44,7 +51,7 @@ app_ui <- function(request) {
           inputId = "selected_language",
           label = NULL,
           choices = c("en", "nb"),
-          width = '75px'
+          width = "75px"
         )
       ),
     )
