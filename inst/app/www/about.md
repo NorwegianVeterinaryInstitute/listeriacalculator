@@ -1,4 +1,4 @@
-### Background information
+# Background information
 Listeria monocytogenes is a dangerous bacteria that is found in food from time to time. Normally healthy people can tolerate fairly high concentrations of it without getting seriously ill, but pregnant women, the elderly, small children and people with weakened immune systems can tolerate less. Read more about Listeria monocytogenes .
 
 The regulations and Listeria monocytogenes in food
@@ -8,7 +8,7 @@ The challenge with Listeria is that it can grow in many types of food, even at r
 
 Listeria is found relatively more often in fish and seafood than in other foods. This means that some countries advise pregnant women not to eat sushi. Other countries do not have categorical advice.
 
-### This is how the calculation is done
+# This is how the calculation is done
 We have measured how quickly Listeria grows in salmon and sushi at different temperatures, eg 4, 10 and 22 degrees. These are used as reference values ​​in the calculator. For other temperatures, a conversion model has been used to find the growth rate. This model is described in the guidelines for storage studies for risk assessment of Listeria in food.
 
 We have checked that the model is valid for Listeria monocytogenes in salmon and salmon sushi for these temperature ranges:
@@ -25,7 +25,7 @@ The reason for this variation is partly that Listeria is really unevenly distrib
 
 Therefore, insert several starting concentrations and evaluate according to the worst likely scenario
 
-### What is the final concentration of Listeria in fish?
+# What is the final concentration of Listeria in fish?
 Listeria multiplies by doubling. This means that the concentration increases as follows: 1-2-4-8-16-32-64-128-254-1008-2016-4032-8064-etc. When growth starts, it takes the same amount of time between each doubling, until there is no food or other conditions slow down growth. The time between each doubling depends on the temperature and the growth conditions in the food.
 
 The growth curve for each link in the chain is given as lines in the figure, on a logarithmic scale. If one wants to recalculate in absolute numbers, it can be done by taking the exponent of the logarithm, like this:
@@ -48,15 +48,15 @@ Even if the model and the calculator are tried and tested, a model is never more
 
 In addition: if temperature deviations have been measured in the cold room, it is likely that some parts of the room, for example close to the heating point, have a higher temperature than the rest. In that case, growth will be fastest in the warmest parts of the lot. The temperature in different parts of the refrigerator can also vary. Therefore, use the calculator based on a worst-case scenario.
 
-### Legal
+## Legal
 Veterinary institutes are not legally responsible for incorrect use of the calculator. The calculator must only be used as a supplement to other requirements in the regulations, not as a replacement.
 
-### Contact Us
+## Contact Us
 For questions, contact Taran Skjerdal.
 
 E-mail: taran.skjerdal@vetinst.no
 
-### Bibliography
+## Bibliography
 1. Beaufort A, Bergis H, Lardeux AL, in collaboration with Betts G, Polet M, Botteldoorn N, Papageorgiou G, Andersen JK, Boel J, Hickey B, Jacolbs_Reitsma W, Fitz-James I, Gomes CMP, Cabanova L, Sarabia CA, Skjerdal, T 2014. EURL Lm technical guidance document for conducting shelf-life studies on Listeria monocytogenes in ready-to-eat foods, version 3 – 6 June 2014 ANSES, Maisons-Alfort, France, pp.46. Implemented in EU food legislation. https://ec.europa.eu/food/sites/food/files/safety/docs/biosafety_fh_mc_technical_guidance_document_listeria_in_rte_foods.pdf .
 2. Buchanan, R. L., Gorris, L. G. M., Hayman, M. M., Jackson, T. C., & Whiting, R. C. (2017). A review of Listeria monocytogenes: An update on outbreaks, virulence, dose-response, ecology, and risk assessments. Food Control, 75, 1-13. doi:10.1016/j.foodcont.2016.12.016
 3. Matportalen, Dietary advice for pregnant women http://www.matportalen.no/rad_til_spesielle_grupper/tema/gravide/

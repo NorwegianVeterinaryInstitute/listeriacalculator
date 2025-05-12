@@ -7,18 +7,17 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_home_ui <- function(id){
+mod_home_ui <- function(id) {
   ns <- NS(id)
 
-  shiny::uiOutput(ns('home'))
-
+  shiny::uiOutput(ns("home"))
 }
 
 #' home Server Functions
 #' @importFrom shiny includeMarkdown
 #' @noRd
-mod_home_server <- function(id, selected_language){
-  moduleServer( id, function(input, output, session){
+mod_home_server <- function(id, selected_language) {
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     translator <- golem::get_golem_options(which = "translator")
@@ -27,23 +26,26 @@ mod_home_server <- function(id, selected_language){
     })
 
     output$home <- shiny::renderUI({
-
-      if(i18n()$get_translation_language() == 'en') {
-      shiny::tagList(
-        tagList(
-          shiny::includeMarkdown(app_sys("app/www/home.md"))
-        )
-      )} else {
+      if (i18n()$get_translation_language() == "en") {
         shiny::tagList(
           tagList(
-            shiny::includeMarkdown(app_sys("app/www/home-nb.md"))
+            shiny::div(
+              role = "region", `aria-label` = "App Home Page",
+              shiny::includeMarkdown(app_sys("app/www/home.md"))
+            )
           )
         )
-
+      } else {
+        shiny::tagList(
+          tagList(
+            shiny::div(
+              role = "region", `aria-label` = "App Home Page",
+              shiny::includeMarkdown(app_sys("app/www/home-nb.md")),
+            )
+          )
+        )
       }
     })
-
-
   })
 }
 
