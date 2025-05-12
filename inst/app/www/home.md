@@ -1,4 +1,4 @@
-### This is what the calculator does
+# This is what the calculator does
 
 This calculator illustrates the storage conditions of salmon that result in higher concentrations than 100 Listeria monocytogenes per gram of sushi.
 
@@ -6,7 +6,7 @@ On the tab __Calculator__ you can enter time and temperature data for the steps 
 
 The calculator is not a substitute for other requirements in the regulations, only a supplement.
 
-### The Reference Case
+# The Reference Case
 
 The starting data in the calculator are a reference scenario that is also presented in the figure. This scenario reflects an example of reasonably foreseeable conditions of storage in the different steps from the fish filleting facility to the fish is brought home, stored in the refrigerator, and prepared for sushi. Sushi does in our case mean combinations of raw fish fillet and acid marinated rice.  
 
@@ -29,6 +29,7 @@ Initial concentration is set to 1, and  Percentage of salmon in sushi is set to 
 ![Reference scenario](./reference_line.png)
 
 Please note that the reference case will remain the same in the plot also when other input numbers are inserted in the table. 
-### Learn more 
+
+## Learn more 
 
 Do you want to understand how the calculator is built? See background data on the __About__ tab for the calculations.
