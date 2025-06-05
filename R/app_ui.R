@@ -8,7 +8,7 @@ app_ui <- function(request) {
   i18n <- golem::get_golem_options(which = "translator")
   i18n$set_translation_language("en")
 
-  metathis::meta() %>%
+  metathis::meta() |>
     metathis::meta_social(
       title = "Listeria Calculator",
       description = "Listeria Calculator for Raw Fish",
